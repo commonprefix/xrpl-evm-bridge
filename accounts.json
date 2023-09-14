@@ -1,0 +1,42 @@
+{
+  "accounts": {
+    "validators": [
+      {
+        "xrpl": {
+          "seed": "sEdSoLgjwttiKbRW1fvjrgM1BBxAzFR",
+          "address": "rAyVesZBSgW9XdMmvTeFpBx2fn8kvGfW5"
+        },
+        "eth": {
+          "privateKey": "0xb699a8ca0a6dfb5b4f2bb6cffdaeff83ae03efed8ca62f79722ef7c856f80645",
+          "address": "0xc9BaEC1BfD1626f952c68168C7Da0D9d1B4502f6"
+        }
+      },
+      {
+        "xrpl": {
+          "seed": "sEdVrAMHaUtuvPiqmVRgZGD3JoiDtVm",
+          "address": "rMZat4JXjNFS7xfa7tVTZDYV1KX58pKiip"
+        },
+        "eth": {
+          "privateKey": "0x41096b2aeec1a04b02179f37946f259c1cea00160d94d6601dd88824f416c24d",
+          "address": "0x9583403a5F67289800101785329C7B03841Af1b3"
+        }
+      }
+    ],
+    "user": {
+      "xrpl": {
+        "seed": "sEdTViLXkQabNNVBE76bYKnG2xwkDQu",
+        "address": "rnj76FF5MK2aeQUcLTEAjiieGcxFuPJb5G"
+      },
+      "eth": {
+        "privateKey": "0x81d6a49661802f2aa8ce270127b7afe4e734bf87b4b7cdd0165338abe4741330",
+        "address": "0x0C1800deB3fd8d168Bbb354025A50980aD23f3d2"
+      }
+    },
+    "multisig": {
+      "xrpl": {
+        "seed": "sEdSC7zpKEs4PvtSCLV6TFQLbU3FbMS",
+        "address": "rKieSTfZyfHjRGS7YmHKcrWdsUUREWgRyN"
+      }
+    }
+  }
+}
