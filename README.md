@@ -1,8 +1,12 @@
-# XRPL - EVM Bridge
-Simple bridge for wrapping XRP, the native token of [XRPL Ledger](https://xrpl.org/), to EVM-compatible chains. The purpose of this bridge is to demonstrate the feasibility of such a system and a way to learn more about the XRP Ledger. It comes with many caveats will be mentioned below.
+# XRPL<>EVM Bridge
+
+> A simple bridge for wrapping XRP, the native token of the [XRPL Ledger](https://xrpl.org/), to EVM-compatible chains.
+
+The purpose of this bridge is to demonstrate the feasibility of such a system and a way to learn more about the XRPL stack. It comes with many caveats that are mentioned below.
 
 ## Architecture
-The entry point of the bridge is on the XRP Ledger. There exists a [multi-sig account](https://xrpl.org/multi-signing.html) that holds and releases funds as requested by users. On the EVM side of the bridge lies a partial deployment of the [FLRWrap](https://github.com/flrfinance/bridge-contracts) bridge, specifically the [WrapMintBurn](https://github.com/flrfinance/bridge-contracts/blob/main/src/WrapMintBurn.sol) contract. A typical ERC20 token is also needed that will act as the wrapped version of the XRP token.
+
+The entry point of the bridge is on the XRP Ledger. There exists a [multi-sig account](https://xrpl.org/multi-signing.html) that holds and releases funds as requested by users. On the EVM side of the bridge lies a partial deployment of the [Enosys Bridge](https://github.com/flrfinance/bridge-contracts), specifically the [WrapMintBurn](https://github.com/flrfinance/bridge-contracts/blob/main/src/WrapMintBurn.sol) contract. A typical ERC-20 token is also needed that will act as the wrapped version of the XRP token.
 
 Off-chain there are Validator processes, written in TypeScript, that watch and sign transactions between the endpoints of the bridge. The number of validators required is specified during the deployment of WrapMintBurn and can also be configured during the lifetime of the bridge.
 
