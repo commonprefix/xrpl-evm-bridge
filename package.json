@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "ethers": "^5.7.2",
+    "redis": "^4.6.8",
+    "typescript": "^5.2.2",
+    "xrpl": "^2.11.0"
+  }
+}
