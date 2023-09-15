@@ -1,6 +1,6 @@
 # XRPL<>EVM Bridge
 
-> A simple multi-sig bridge for wrapping XRP, the native token of the [XRPL Ledger](https://xrpl.org/), to EVM-compatible chains.
+> A simple PoC multi-sig bridge for wrapping XRP, the native token of the [XRPL Ledger](https://xrpl.org/), to EVM-compatible chains.
 
 The purpose of this bridge is to demonstrate the feasibility of such a system and a way to learn more about the XRPL stack. It comes with many caveats that are mentioned below.
 
