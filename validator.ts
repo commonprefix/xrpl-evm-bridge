@@ -6,7 +6,7 @@ import { RedisClientType, createClient } from "redis";
 import { acquireLock, delay, releaseLock } from "./lib/utils";
 
 const SERVER = "wss://s.altnet.rippletest.net:51233";
-const WRAP_ADDRESS = "0x6Af3bb511B4cD7206861817BbdadcfC4627d9cAB";
+const WRAP_ADDRESS = "0x5834683f869a419F68eD374bB79f7971F0d7F3Ed";
 const WRAP_TOKEN = "0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9";
 
 const { accounts } = AccountsJSON;
@@ -175,7 +175,7 @@ class Bridge {
         if (res === "OK") {
           this.unWrap(
             id.toNumber(),
-            destinationTagMap[parseInt(to, 16)].xrpl,
+            ethers.utils.base58.encode(ethers.utils.hexStripZeros(to)),
             amount.toString()
           );
         }

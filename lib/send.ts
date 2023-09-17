@@ -5,7 +5,7 @@ import * as AccountsJSON from "../accounts.json";
 import { ethers } from "ethers";
 
 const SERVER = "wss://s.altnet.rippletest.net:51233";
-const WRAP_ADDRESS = "0x6Af3bb511B4cD7206861817BbdadcfC4627d9cAB";
+const WRAP_ADDRESS = "0x5834683f869a419F68eD374bB79f7971F0d7F3Ed";
 const TOKEN_ADDRESS = "0x18a4dEA0a6a1Ee76a1a88f65d74dfbdeb1fb1C8F";
 
 const { accounts } = AccountsJSON;
@@ -71,7 +71,10 @@ async function main() {
       await wrap.deposit(
         "0x18a4dEA0a6a1Ee76a1a88f65d74dfbdeb1fb1C8F",
         "1000000",
-        ethers.utils.hexZeroPad("0x1", 20)
+        ethers.utils.zeroPad(
+          ethers.utils.base58.decode(accounts.user.xrpl.address),
+          32
+        )
       )
     ).wait();
 
