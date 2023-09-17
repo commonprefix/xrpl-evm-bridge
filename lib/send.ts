@@ -28,6 +28,13 @@ async function main() {
       Destination: recipient.address,
       // @ts-ignore
       DestinationTag: 1,
+      Memos: [
+        {
+          Memo: {
+            MemoData: accounts.user.eth.address.substring(2),
+          },
+        },
+      ],
     };
     const payment = await client.autofill(transaction);
 

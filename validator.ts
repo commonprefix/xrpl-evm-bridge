@@ -203,14 +203,9 @@ class Bridge {
         return;
       }
 
-      if (!payment.Amount || !payment.DestinationTag) {
+      if (!payment.Amount || !payment.Memos || !payment.Memos.length) {
         console.error("ERROR: Invalid transaction");
         console.log(JSON.stringify(tx));
-        return;
-      }
-
-      if (!destinationTagMap[+payment.DestinationTag]) {
-        console.error("ERROR: Unknown destination tag");
         return;
       }
 
@@ -219,7 +214,7 @@ class Bridge {
       }
 
       this.wrap(
-        destinationTagMap[+payment.DestinationTag].eth,
+        "0x" + payment.Memos[0].Memo.MemoData,
         payment.Amount as string
       );
     });
