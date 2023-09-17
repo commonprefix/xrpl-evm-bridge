@@ -1,6 +1,6 @@
 import * as xrpl from "xrpl";
 import { ethers } from "ethers";
-import * as WrapABI from "./abi.json";
+import * as WrapABI from "./abi/WrapMintBurn.json";
 import * as AccountsJSON from "./accounts.json";
 import { RedisClientType, createClient } from "redis";
 import { acquireLock, delay, releaseLock } from "./lib/utils";
