@@ -1030,7 +1030,7 @@ interface IWrap is IAccessControlEnumerable {
         uint256 indexed id,
         address indexed token,
         uint256 amount,
-        address to,
+        bytes32 to,
         uint256 fee
     );
 
@@ -1152,7 +1152,7 @@ interface IWrap is IAccessControlEnumerable {
     function deposit(
         address token,
         uint256 amount,
-        address to
+        bytes32 to
     ) external returns (uint256);
 
     /// @dev Approve and/or execute a given request.
@@ -2332,14 +2332,14 @@ abstract contract Wrap is IWrap, AccessControlEnumerable {
     function deposit(
         address token,
         uint256 amount,
-        address to
+        bytes32 to
     )
         external
         isNotPaused
         isValidTokenAmount(token, amount)
         returns (uint256 id)
     {
-        if (to == address(0)) revert InvalidToAddress();
+        if (to.length == 0) revert InvalidToAddress();
         id = depositIndex;
         depositIndex++;
         uint256 fee = onDeposit(token, amount);
