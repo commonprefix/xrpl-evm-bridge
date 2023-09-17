@@ -26,9 +26,6 @@ const destinationTagMap: { [key: number]: { eth: string; xrpl: string } } = {
   },
 };
 
-// Problems:
-// - no easy way to know which unwrapping has been done and which not
-// - will fail if validators don't see the transactions with the same order
 class Bridge {
   private source: xrpl.Client;
   private target: ethers.providers.JsonRpcProvider;
@@ -176,7 +173,6 @@ class Bridge {
           }
         );
         if (res === "OK") {
-          console.log(id.toNumber(), "not signed, proceed");
           this.unWrap(
             id.toNumber(),
             destinationTagMap[parseInt(to, 16)].xrpl,
