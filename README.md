@@ -36,6 +36,10 @@ Currently, the only user input is the Destination Tag, which is quite limiting. 
 
 The XRPL transaction that the Validators sign includes a [Sequence](https://xrpl.org/basic-data-types.html#account-sequence) number, which is the transaction number of the multi-sig account. Gathering signatures takes time, and there might be other transactions in the meantime. If another transaction is executed from that multi-sig, then the multisigned transaction will not be executable since the Sequence number will be outdated. It is currently best to complete an unwrapping before starting another one, to make sure that no other transactions will be executed until all the signatures have been gathered for a given unwrapping. To fix this, [XRPL Tickets](https://xrpl.org/tickets.html) could be used, allowing a transaction to be executed out of order.
 
+### Chain Reorgs
+
+The validator code currently doesn't handle chain reorgs. It should wait for a transaction's block to reach a certain height before processing that transaction. Though that's not necessary for all the chains, it should be configurable.
+
 ## Setup
 
 - Install dependencies via NPM:
